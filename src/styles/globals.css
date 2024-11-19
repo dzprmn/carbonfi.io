@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply text-gray-900 bg-white;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold;
+    }
+}
+
+@layer components {
+    .section-padding {
+        @apply py-16 md:py-24;
+    }
+
+    .section-title {
+        @apply text-3xl md:text-4xl font-bold text-center mb-8;
+    }
+
+    .section-description {
+        @apply text-gray-600 text-center max-w-2xl mx-auto mb-12;
+    }
+}
+
+@layer utilities {
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-600;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Optional: Improve text rendering */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

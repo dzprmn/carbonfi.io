@@ -1,0 +1,32 @@
+/* src/styles/services.css */
+.services-swiper {
+    overflow: visible !important;
+    padding-bottom: 2rem;
+}
+
+.services-swiper .swiper-slide {
+    height: auto !important;
+}
+
+/* Remove default swiper button styles */
+.services-swiper .swiper-button-next,
+.services-swiper .swiper-button-prev {
+    display: none;
+}
+
+/* Optional: Add a subtle animation for sliding */
+.services-swiper .swiper-slide {
+    opacity: 0.5;
+    transform: scale(0.95);
+    transition: all 0.5s ease;
+}
+
+.services-swiper .swiper-slide-active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Add smooth shadow transition */
+.services-swiper .swiper-slide:hover {
+    transform: translateY(-5px);
+}
