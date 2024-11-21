@@ -13,9 +13,9 @@ import { wagmiConfig, } from './config/wagmi';
 import { Home } from '@/pages/Home';
 import { NewsPage } from '@/pages/News';
 import { NewsDetail } from '@/pages/NewsDetail';
-// import { AboutPage } from '@/pages/About';
-// import { FaqPage } from '@/pages/Faq';
-// import { ContactPage } from '@/pages/Contact';
+import { AboutPage } from '@/pages/About.tsx';
+import { FaqPage } from '@/pages/Faq';
+import { ContactPage } from '@/pages/Contact';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -32,11 +32,11 @@ function App() {
                         <Header isTransparent={isHomePage} />
                         <Routes>
                             <Route path="/" element={<Home />} />
-                            {/*<Route path="/about" element={*/}
-                            {/*    <PageWrapper>*/}
-                            {/*        <AboutPage />*/}
-                            {/*    </PageWrapper>*/}
-                            {/*} />*/}
+                            <Route path="/about" element={
+                                <PageWrapper>
+                                    <AboutPage />
+                                </PageWrapper>
+                            } />
                             <Route path="/news" element={
                                 <PageWrapper>
                                     <NewsPage />
@@ -47,16 +47,16 @@ function App() {
                                     <NewsDetail />
                                 </PageWrapper>
                             } />
-                            {/*<Route path="/faq" element={*/}
-                            {/*    <PageWrapper>*/}
-                            {/*        <FaqPage />*/}
-                            {/*    </PageWrapper>*/}
-                            {/*} />*/}
-                            {/*<Route path="/contact" element={*/}
-                            {/*    <PageWrapper>*/}
-                            {/*        <ContactPage />*/}
-                            {/*    </PageWrapper>*/}
-                            {/*} />*/}
+                            <Route path="/faq" element={
+                                <PageWrapper>
+                                    <FaqPage />
+                                </PageWrapper>
+                            } />
+                            <Route path="/contact" element={
+                                <PageWrapper>
+                                    <ContactPage />
+                                </PageWrapper>
+                            } />
                         </Routes>
                         <Footer />
                     </Layout>
