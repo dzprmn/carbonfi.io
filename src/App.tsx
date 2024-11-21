@@ -1,8 +1,8 @@
 import {Routes, Route, useLocation} from 'react-router-dom';
-import { Layout } from '@/components/layout/Layout';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
-import {PageWrapper} from "@/components/layout/PageWrapper.tsx";
+import { Layout } from './components/layout/Layout';
+import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
+import {PageWrapper} from "./components/layout/PageWrapper.tsx";
 
 import { WagmiProvider } from 'wagmi';
 import {lightTheme, RainbowKitProvider} from '@rainbow-me/rainbowkit';
