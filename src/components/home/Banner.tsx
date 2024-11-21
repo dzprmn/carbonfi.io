@@ -1,5 +1,5 @@
-import { useState } from "react";
-import FsLightbox from "fslightbox-react";
+// import { useState } from "react";
+// import FsLightbox from "fslightbox-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import type { SwiperOptions } from 'swiper/types';
@@ -9,7 +9,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 export const Banner = () => {
-    const [lightboxToggler, setLightboxToggler] = useState(false);
+    // const [lightboxToggler, setLightboxToggler] = useState(false);
 
     // Keep existing swiper settings
     const swiperSettings: SwiperOptions = {
@@ -99,15 +99,15 @@ export const Banner = () => {
                                                 >
                                                     Read Whitepaper
                                                 </Button>
-                                                <Button
-                                                    variant="outline"
-                                                    size="lg"
-                                                    onClick={() => setLightboxToggler(!lightboxToggler)}
-                                                    className="border-2 border-white text-white hover:bg-white/10
-                                                           px-8 py-3 text-base rounded-full transition-all duration-300"
-                                                >
-                                                    Watch Video
-                                                </Button>
+                                                {/*<Button*/}
+                                                {/*    variant="outline"*/}
+                                                {/*    size="lg"*/}
+                                                {/*    onClick={() => setLightboxToggler(!lightboxToggler)}*/}
+                                                {/*    className="border-2 border-white text-white hover:bg-white/10*/}
+                                                {/*           px-8 py-3 text-base rounded-full transition-all duration-300"*/}
+                                                {/*>*/}
+                                                {/*    Watch Video*/}
+                                                {/*</Button>*/}
                                             </div>
                                         </div>
                                     </div>
@@ -165,12 +165,12 @@ export const Banner = () => {
                 `}
             </style>
 
-            <FsLightbox
-                toggler={lightboxToggler}
-                sources={[
-                    "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" // Replace with your YouTube video ID
-                ]}
-            />
+            {/*<FsLightbox*/}
+            {/*    toggler={lightboxToggler}*/}
+            {/*    sources={[*/}
+            {/*        "https://www.youtube.com/watch?v=YOUR_VIDEO_ID" // Replace with your YouTube video ID*/}
+            {/*    ]}*/}
+            {/*/>*/}
         </div>
     );
 };

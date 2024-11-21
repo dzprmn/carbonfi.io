@@ -1,6 +1,8 @@
 import { Container } from '@/components/shared/Container';
 import { Button } from '@/components/shared/Button';
 import { FC } from 'react';
+import {FaArrowRight} from "react-icons/fa6";
+import {Link} from "react-router-dom";
 
 interface FeatureItem {
     icon: string;
@@ -102,7 +104,12 @@ export const About = () => {
                             size="lg"
                             className="transform transition-all duration-300 hover:translate-y-[-2px]"
                         >
-                            About CarbonFi
+                            <Link to="/about" className="inline-flex items-center gap-2">
+                                About CarbonFi
+                                <FaArrowRight className="transform transition-transform duration-300
+                                                 group-hover:translate-x-2" />
+                            </Link>
+
                         </Button>
 
                         <img
