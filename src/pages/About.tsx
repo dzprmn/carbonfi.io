@@ -48,11 +48,17 @@ export const AboutPage = () => {
             <section className="relative py-24 lg:py-32 overflow-hidden">
                 <div className="absolute inset-0">
                     <img
-                        src="/images/about-bg.jpg"
+                        src="/images/about-shape-1.png"
+                        alt=""
+                        className="absolute top-32 right-20 animate-pulse hidden 2xl:block"
+                        draggable={false}
+                    />
+                    <img
+                        src="/images/roadmap-bg.jpg"
                         alt=""
                         className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-white/95" />
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/55 via-white/50 to-white/55"/>
                 </div>
 
                 <Container className="relative z-10">
