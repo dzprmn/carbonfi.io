@@ -4,7 +4,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import './styles/globals.css';
-import './styles/header.css'; // Add this line
+import './styles/header.css';
+import './styles/staking.css';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>

@@ -16,6 +16,7 @@ import { NewsDetail } from '@/pages/NewsDetail';
 import { AboutPage } from '@/pages/About.tsx';
 import { FaqPage } from '@/pages/Faq';
 import { ContactPage } from '@/pages/Contact';
+import { StakingPage } from '@/pages/Staking';
 
 // Create a client
 const queryClient = new QueryClient();
@@ -55,6 +56,11 @@ function App() {
                             <Route path="/contact" element={
                                 <PageWrapper>
                                     <ContactPage />
+                                </PageWrapper>
+                            } />
+                            <Route path="/staking" element={
+                                <PageWrapper>
+                                    <StakingPage />
                                 </PageWrapper>
                             } />
                         </Routes>

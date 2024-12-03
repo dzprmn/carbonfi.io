@@ -1,0 +1,52 @@
+/* src/styles/staking.css */
+.staking-card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg transition-all duration-200;
+    @apply hover:shadow-xl;
+}
+
+.staking-input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600;
+    @apply bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100;
+    @apply focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+    @apply disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:cursor-not-allowed;
+}
+
+.staking-button {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply bg-blue-600 hover:bg-blue-700 text-white;
+    @apply disabled:bg-gray-400 disabled:cursor-not-allowed;
+}
+
+.staking-stats-card {
+    @apply p-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl text-white;
+    @apply shadow-lg hover:shadow-xl transition-all duration-200;
+}
+
+.staking-rewards-card {
+    @apply bg-gradient-to-br from-green-500 to-green-600 text-white;
+    @apply shadow-lg hover:shadow-xl transition-all duration-200;
+}
+
+.staking-form {
+    @apply space-y-4;
+}
+
+.staking-label {
+    @apply block text-sm font-medium text-gray-700 dark:text-gray-300;
+}
+
+.staking-helper-text {
+    @apply text-sm text-gray-500 dark:text-gray-400;
+}
+
+/* Loading animation */
+.loading-shimmer {
+    @apply animate-pulse bg-gray-200 dark:bg-gray-700 rounded;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .staking-grid {
+        @apply grid-cols-1 gap-4;
+    }
+}
