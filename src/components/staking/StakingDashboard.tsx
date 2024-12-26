@@ -4,7 +4,7 @@ import { Container } from '../shared/Container';
 import { StakingCard } from './StakingCard';
 import { formatEther } from 'viem';
 import { Card } from '../shared/Card';
-import { PLACEHOLDER_STAKING_PERIODS, PLACEHOLDER_USER_STAKES } from '../../constants/placeholderData';
+import { PLACEHOLDER_STAKING_PERIODS, PLACEHOLDER_USER_STAKES } from '@/constants/placeholderData';
 
 export const StakingDashboard = () => {
     const stakingPeriods = PLACEHOLDER_STAKING_PERIODS;
