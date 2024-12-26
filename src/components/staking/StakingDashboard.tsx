@@ -2,67 +2,35 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { Container } from '../shared/Container';
 import { StakingCard } from './StakingCard';
-import { useMultiStaking } from '../../hooks/useStaking';
-import { Loader2 } from 'lucide-react';
 import { formatEther } from 'viem';
 import { Card } from '../shared/Card';
+import { PLACEHOLDER_STAKING_PERIODS, PLACEHOLDER_USER_STAKES } from '../../constants/placeholderData';
 
 export const StakingDashboard = () => {
-    const {
-        isConnected,
-        isLoading,
-        stakingPeriods,
-        tokenBalance,
-        userStakes,
-        handleStake,
-        handleWithdraw,
-        handleClaimRewards,
-    } = useMultiStaking();
+    const stakingPeriods = PLACEHOLDER_STAKING_PERIODS;
+    const userStakes = PLACEHOLDER_USER_STAKES;
+    const tokenBalance = BigInt(10000000000000000000n); // 10 CAFI
 
-    // Calculate totals with null checks
+    // Calculate totals using placeholder data
     const totalValueStaked = stakingPeriods.reduce(
         (acc, period) => acc + Number(period.totalStaked),
         0
     );
 
-    // Calculate user's total staked amount
     const userTotalStaked = Object.values(userStakes).reduce(
         (acc, stake) => acc + Number(stake.amount),
         0
     );
 
-    // Calculate total pending rewards
     const totalPendingRewards = Object.values(userStakes).reduce(
         (acc, stake) => acc + Number(stake.pendingRewards),
         0
     );
 
-    if (!isConnected) {
-        return (
-            <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
-                <Container>
-                    <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
-                        <h1 className="text-3xl font-bold text-gray-900">Welcome to CarbonFi Staking</h1>
-                        <p className="text-gray-500 text-center max-w-md">
-                            Connect your wallet to start earning rewards by staking your CAFI tokens
-                        </p>
-                        <ConnectButton />
-                    </div>
-                </Container>
-            </div>
-        );
-    }
-
-    if (isLoading || !stakingPeriods || stakingPeriods.length === 0) {
-        return (
-            <Container>
-                <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-4">
-                    <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
-                    <p className="text-gray-500">Loading staking options...</p>
-                </div>
-            </Container>
-        );
-    }
+    // const formatDuration = (seconds: number) => {
+    //     const days = seconds / (24 * 60 * 60);
+    //     return `${days} Days`;
+    // };
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">
@@ -113,12 +81,12 @@ export const StakingDashboard = () => {
                             <StakingCard
                                 key={period.duration}
                                 period={period}
-                                userStakeInfo={userStakes[period.duration]}
-                                onStake={handleStake}
-                                onWithdraw={handleWithdraw}
-                                onClaim={handleClaimRewards}
+                                // userStakeInfo={userStakes[period.duration]}
+                                onStake={() => {}}
+                                onWithdraw={() => {}}
+                                onClaim={() => {}}
                                 maxStakeAmount={tokenBalance}
-                                isLoading={isLoading}
+                                isLoading={false}
                             />
                         ))}
                     </div>
@@ -130,19 +98,19 @@ export const StakingDashboard = () => {
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Stake Tokens</h3>
                                 <p className="text-gray-600">
-                                    Choose your preferred staking period. Longer staking periods offer higher APR rates.
+                                    Choose your preferred staking period. Longer staking periods offer higher APR rates and better rewards.
                                 </p>
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Earn Rewards</h3>
                                 <p className="text-gray-600">
-                                    Earn CAFI tokens as rewards. Rewards are calculated per second and can be claimed anytime.
+                                    Earn CAFI tokens as rewards. Your rewards are calculated per second and can be claimed at any time.
                                 </p>
                             </div>
                             <div>
                                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Withdrawal</h3>
                                 <p className="text-gray-600">
-                                    Withdraw your tokens after the staking period ends. Early withdrawal is not available.
+                                    Withdraw your tokens after the staking period ends. Early withdrawal is not available to ensure protocol stability.
                                 </p>
                             </div>
                         </div>

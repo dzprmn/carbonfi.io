@@ -9,5 +9,6 @@ export const CONTRACTS = {
     CAFI: {
         address: import.meta.env.VITE_CAFI_TOKEN_ADDRESS as `0x${string}`,
         abi: ERC20ABI,
-    },
+    }, chainId: undefined
+
 } as const;

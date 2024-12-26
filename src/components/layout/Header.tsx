@@ -33,6 +33,7 @@ const SOCIAL_LINKS = [
 const NAV_LINKS = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
+    { path: '/staking', label: 'Staking' },
     { path: '/news', label: 'News' },
     { path: '/faq', label: 'FAQ' },
     { path: '/contact', label: 'Contact' },
