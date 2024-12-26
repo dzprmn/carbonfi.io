@@ -10,8 +10,6 @@
     "preview": "vite preview",
     "type-check": "tsc --noEmit",
     "check-supply": "cross-env NODE_NO_WARNINGS=1 tsx src/scripts/checkSupply.ts",
-    "balance-supply": "cross-env NODE_NO_WARNINGS=1 tsx src/scripts/balanceSupply.ts",
-    "verify-bridge-basic": "tsx src/scripts/verifyBridgeBasic.ts",
     "check-bridge-state": "tsx src/scripts/checkBridgeState.ts"
   },
   "dependencies": {
